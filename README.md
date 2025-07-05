@@ -1,1 +1,1 @@
-#GSAP!
+hey there, welcome! here is a website i made for mosadoluwa fasasi in an attempt to learn animation (also an attempt to make myself a good creative frontend developer.)
