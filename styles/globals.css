@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --black: #232323;
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../public/fonts/inter.ttf");
+}
+
+@font-face {
+  font-family: "bagoss";
+  src: url("../public/fonts/bagoss.ttf");
+}
+
+@font-face {
+  font-family: "bagoss-semibold";
+  src: url("../public/fonts/bagoss-semibold.ttf");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/NeueMontreal-Bold.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "editorial";
+  src: url("/fonts/editorial-regular.otf");
+}
+
+@font-face {
+  font-family: "editorial-bold";
+  src: url("/fonts/editorial-bold.otf");
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-black: var(--black);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-editorial: "editorial";
+  --font-editorial-bold: "editorial-bold";
+}
+
+* {
+  font-family: "bagoss", sans-serif;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/*projects page */
+
+#wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#content {
+  overflow: visible;
+  width: 100%;
+}
+
+.text {
+  position: fixed;
+  top: 50vh;
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 8vw;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-100%);
+  z-index: 2;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: -2;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  z-index: 2;
+}
+
+.filter-text {
+  mix-blend-mode: screen;
+  color: #232323;
+  z-index: 2;
+}
+
+.images {
+  padding-top: 20vh;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 150vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 2%);
+  grid-template-rows: repeat(30, 3%);
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* align-items: center; */
+  z-index: 1;
+  object-fit: cover;
+}
+
+.content__slide-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img:nth-child(1) {
+  grid-area: 1/1/6/8;
+}
+
+img:nth-child(2) {
+  grid-area: 3/12/8/20;
+}
+
+img:nth-child(3) {
+  grid-area: 9/5/13/15;
+}
+
+img:nth-child(4) {
+  grid-area: 14/1/18/8;
+}
+
+img:nth-child(5) {
+  grid-area: 16/12/20/19;
+}
+
+img:nth-child(6) {
+  grid-area: 20/2/25/9;
+}
+
+img:nth-child(7) {
+  grid-area: 22/11/24/20;
+}
+
+img:nth-child(8) {
+  grid-area: 26/5/30/15;
+}
+
+/* Custom cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-foreground, #171717);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Smooth scrolling wrapper ensures full height */
+#smooth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#smooth-content {
+  min-height: 100vh;
+}
+
+/* Hide native cursor */
+body,
+a,
+button {
+  cursor: none;
+}
