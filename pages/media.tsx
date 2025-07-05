@@ -162,7 +162,6 @@ export default function MediaPage() {
   useEffect(() => {
     if (!cardsRef.current) return;
     gsap.from(cardsRef.current.children || [], {
-      // keep opacity intact to prevent blank state, animate only position
       y: 60,
       duration: 1,
       ease: "power3.out",
@@ -176,7 +175,6 @@ export default function MediaPage() {
     });
   }, []);
 
-  // custom cursor follow
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (!cursorRef.current) return;
@@ -186,7 +184,6 @@ export default function MediaPage() {
     return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
 
-  // generate noise texture once and set as background image
   useEffect(() => {
     if (!noiseRef.current) return;
     const canvas = document.createElement("canvas");
@@ -204,11 +201,9 @@ export default function MediaPage() {
     noiseRef.current.style.backgroundImage = `url(${url})`;
   }, []);
 
-  // Refresh ScrollTrigger after mount (useful when navigating from another page)
   useEffect(() => {
     if (typeof window !== "undefined" && ScrollTrigger) {
       ScrollTrigger.refresh();
-      // In case scroll animation hasn't fired yet, force list visible
       if (cardsRef.current) {
         gsap.set(cardsRef.current.children || [], { autoAlpha: 1 });
       }
@@ -221,7 +216,7 @@ export default function MediaPage() {
         <title>Media — Mosadoluwa Fasasi</title>
       </Head>
 
-      {/* HERO */}
+      {}
       <section
         className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black text-white"
         style={{
@@ -230,10 +225,10 @@ export default function MediaPage() {
           backgroundPosition: "center top",
         }}
       >
-        {/* subtle grid overlay */}
+        {}
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
 
-        {/* inner glass card */}
+        {}
         <div className="relative z-10 w-full max-w-5xl mx-auto rounded-3xl border border-white/20 bg-white/5 p-12 md:p-20 text-center">
           <p className="text-lg md:text-xl mb-4 opacity-80 tracking-widest">
             stories · drops · press · experiences
@@ -250,7 +245,7 @@ export default function MediaPage() {
           </p>
         </div>
 
-        {/* back button */}
+        {}
         <Link
           href="/"
           className="absolute top-6 left-6 text-white group flex flex-col items-start"
@@ -259,7 +254,7 @@ export default function MediaPage() {
             className="text-3xl md:text-4xl font-semibold tracking-wide relative pl-10"
             style={{ fontFamily: "bagoss" }}
           >
-            {/* arrow */}
+            {}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -279,7 +274,7 @@ export default function MediaPage() {
           <span className="block w-full h-0.5 bg-white mt-1 transition-opacity group-hover:opacity-60" />
         </Link>
 
-        {/* cursor dot */}
+        {}
         <div
           ref={cursorRef}
           className="pointer-events-none fixed top-0 left-0 z-50 w-3 h-3 rounded-full bg-white mix-blend-difference"
@@ -294,9 +289,9 @@ export default function MediaPage() {
         />
         <div className="mx-auto max-w-[1440px]">
           <main className="relative text-black px-6 md:px-24 pb-32 min-h-screen">
-            {/* noise */}
+            {}
 
-            {/* Heading */}
+            {}
             <h1
               className="text-5xl md:text-7xl font-semibold text-center pt-20"
               style={{ fontFamily: "bagoss" }}
@@ -304,26 +299,10 @@ export default function MediaPage() {
               media
             </h1>
 
-            {/* Filters */}
-            {/* <div className="flex justify-center gap-6 mt-10 text-sm md:text-base uppercase tracking-widest">
-            {[
-              { label: "all", value: "all" },
-              { label: "press", value: "press" },
-              { label: "drops", value: "drops" },
-              { label: "collabs", value: "collabs" },
-              { label: "experiences", value: "experiences" },
-            ].map((f) => (
-              <button
-                key={f.value}
-                onClick={() => setFilter(f.value)}
-                className={`$${filter === f.value ? "font-bold" : "opacity-60"}`}
-              >
-                {filter === f.value ? `[${f.label}]` : f.label}
-              </button>
-            ))}
-          </div> */}
+            {}
+            {}
 
-            {/* Stories list */}
+            {}
             <div
               ref={cardsRef}
               className="relative z-10 mt-20 space-y-24 max-w-6xl mx-auto"
@@ -337,7 +316,7 @@ export default function MediaPage() {
                       key={post.title}
                       className="border-b border-black/20 overflow-hidden"
                     >
-                      {/* header row */}
+                      {}
                       <button
                         onClick={() =>
                           setOpenIdx((prev) => (prev === idx ? null : idx))
@@ -370,14 +349,14 @@ export default function MediaPage() {
                         </svg>
                       </button>
 
-                      {/* expandable content */}
+                      {}
                       <div
                         className={`transition-all duration-500 overflow-hidden ${
                           isOpen ? "max-h-[800px]" : "max-h-0"
                         }`}
                       >
                         <div className="py-8 flex flex-col md:flex-row gap-10">
-                          {/* clickable thumbnail */}
+                          {}
                           {post.link.startsWith("http") ? (
                             <a
                               href={post.link}
@@ -412,7 +391,7 @@ export default function MediaPage() {
                               {post.desc ||
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                             </p>
-                            {/* read more link */}
+                            {}
                             {post.link &&
                               (post.link.startsWith("http") ? (
                                 <a

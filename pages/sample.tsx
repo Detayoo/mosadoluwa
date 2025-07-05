@@ -22,7 +22,6 @@ const HomePage = () => {
         start: "top top",
         end: "bottom top",
         pin: true,
-        // scrub: 1,
       },
     });
 

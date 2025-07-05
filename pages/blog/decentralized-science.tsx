@@ -17,14 +17,6 @@ const articleParagraphs = [
   `Also, prominent figures in the cryptocurrency space have weighed in on this prevailing issue. Vitalik Buterin, co-founder of Ethereum, in his piece "What else could memecoins be?" holds a broad perspective. Rather than dismissing the entire concept of memecoins, he recognizes how important they have become to a vast majority but expresses a desire for higher-quality projects that contribute to the entire ecosystem through public good. Similarly, Changpeng Zhao (CZ), former CEO of Binance recently tweeted "I am not against memes, but meme coins are getting "a little" weird now. Let's build real applications using blockchain."`,
   `Another prominent figure, Tarun Chitra, CEO of Gauntlet, has voiced significant scepticism regarding DeSci initiatives. Chitra argues that the lack of regulatory frameworks and accountability in DeSci can jeopardize both scientific integrity and funding mechanisms. He highlights that while the philosophical premise behind DeSci is commendable — aiming for a better scientific system — many projects fall short and just ride the hype train for ulterior motives. His call for "no scams" in the DeSci space emphasises the necessity for ethical investing and clear communication within the community.`,
   `In conclusion, a shared perspective among many of these debates in the crypto and scientific communities is that memecoins, particularly through DeSci, can have a collective real-world impact. By riding on the engaging nature of memes and relatability, we can foster greater support for scientific endeavours, benefiting both scientists and science enthusiasts alike. DeSci presents an alternative to traditional research and knowledge sharing by democratizing access to scientific inquiry. Encouraging the development of projects that emphasize open access and provide innovative funding mechanisms can transform the memecoin phenomenon into a powerful tool for advancing science, the scientific community, and beyond!`,
-  //   `References:`,
-  //   `Richard Dawkins | Memes | Oxford Union`,
-  //   `Where Did the Word Meme Come From?`,
-  //   `Casually Explained | Memes`,
-  //   `The acronym "DOGE" is likely a nod to a favorite Musk meme and cryptocurrency, Dogecoin`,
-  //   `What else could memecoins be?`,
-  //   `"I am not against memes" - CZ`,
-  //   `"No scam" - Tarun Chitra`,
 ];
 
 export default function DecentralizedScienceBlog() {
@@ -34,7 +26,6 @@ export default function DecentralizedScienceBlog() {
   const wordCount = articleParagraphs.join(" ").split(/\s+/).length;
   const minutes = Math.max(1, Math.ceil(wordCount / 200));
 
-  // cursor follow effect
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
@@ -58,10 +49,8 @@ export default function DecentralizedScienceBlog() {
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-  // Scroll-triggered animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // big plus rotation on scroll
       gsap.to(".big-plus", {
         rotation: 90,
         ease: "none",
@@ -73,7 +62,6 @@ export default function DecentralizedScienceBlog() {
         },
       });
 
-      // paragraph reveals
       gsap.utils.toArray<HTMLElement>("#article p").forEach((p) => {
         gsap.from(p, {
           autoAlpha: 0,
@@ -87,7 +75,6 @@ export default function DecentralizedScienceBlog() {
         });
       });
 
-      // references list stagger
       gsap.from("#refs li", {
         autoAlpha: 0,
         x: -30,
@@ -113,7 +100,7 @@ export default function DecentralizedScienceBlog() {
         />
       </Head>
       <main className="bg-white text-black font-sans relative overflow-x-hidden">
-        {/* custom cursor */}
+        {}
         <div
           ref={ringRef}
           className="pointer-events-none fixed top-0 left-0 w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00000033] z-[90]"
@@ -125,7 +112,7 @@ export default function DecentralizedScienceBlog() {
           style={{ mixBlendMode: "difference" }}
         />
 
-        {/* Top nav bar */}
+        {}
         <div className="px-4 lg:px-12 mx-auto max-w-[1440px] py-6 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs">
             <span className="flex items-center justify-center text-[20px]">
@@ -133,17 +120,15 @@ export default function DecentralizedScienceBlog() {
             </span>
           </div>
           <div className="flex items-center gap-6 text-xs">
-            {/* <button className="border rounded-full px-4 py-1 flex items-center gap-2 hover:bg-black hover:text-white transition-colors">
-              + Schedule&nbsp;call
-            </button> */}
-            {/* <button className=" flex justify-between"> */}
-            {/* <span className="block w-6 h-0.5 bg-black" /> back */}
-            {/* <span className="block w-full h-0.5 bg-black" /> */}
-            {/* </button> */}
+            {}
+            {}
+            {}
+            {}
+            {}
           </div>
         </div>
 
-        {/* HERO layout */}
+        {}
         <section className="px-4 lg:px-12 mx-auto max-w-[1440px] pt-4 grid lg:grid-cols-12 gap-8 min-h-[40vh] lg:min-h-[60vh] items-start">
           <h1
             className="col-span-12 lg:col-span-7 font-semibold leading-none text-[12vw] lg:text-[10vw]"
@@ -152,7 +137,7 @@ export default function DecentralizedScienceBlog() {
             a case for decentralized science
           </h1>
 
-          {/* big plus */}
+          {}
           <div className="hidden lg:flex col-span-1 justify-center">
             <span className="big-plus font-light select-none leading-none text-[25vw] lg:text-[10vw]">
               +
@@ -168,7 +153,7 @@ export default function DecentralizedScienceBlog() {
           </div>
         </section>
 
-        {/* Content */}
+        {}
         <article
           id="article"
           className="px-4 lg:px-12 max-w-3xl mx-auto space-y-8 py-4 lg:py-16"
@@ -179,14 +164,14 @@ export default function DecentralizedScienceBlog() {
             </p>
           </header>
 
-          {/* Body */}
+          {}
           <section className="space-y-6 leading-relaxed text-lg">
             {articleParagraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </section>
 
-          {/* References */}
+          {}
           <section className="pt-10 border-t border-gray-300 space-y-2">
             <h2
               className="text-2xl font-semibold"
@@ -259,14 +244,8 @@ export default function DecentralizedScienceBlog() {
             </ul>
           </section>
 
-          {/* Back */}
-          {/* <div className="pt-16 text-center">
-            <Link href="/media" className="underline">
-              <span style={{ fontFamily: "'Editorial New', serif" }}>
-                BACK TO BLOG
-              </span>
-            </Link>
-          </div> */}
+          {}
+          {}
         </article>
       </main>
     </>

@@ -16,13 +16,7 @@ const Projects = () => {
   return (
     <>
       <div className="h-screen w-full bg-black project">
-        {/* <h1 className="text">Scrolly Images</h1>
-      <h1 aria-hidden="true" className="text outline-text">
-        Scrolly Images
-      </h1>
-      <h1 aria-hidden="true" className="text filter-text">
-        Scrolly Images
-      </h1> */}
+        {}
         <h1 className="fixed top-[20px] left-1/2 project__header text-white text-4xl font-900 z-[100]">
           hi there, these are my projects
         </h1>

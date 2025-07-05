@@ -12,7 +12,7 @@ import Footer from "../Footer";
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
+      {}
       <section className="flex h-auto lg:h-[78vh] xs:h-[92vh] items-center justify-between layout__container relative overflow-hidden">
         <div className="z-[10] mt-[-150px] sm:mt-[-80px]">
           <h1 className="text-[53px] lg:text-[50px] 2xs:text-[40px] xs:text-[32px] mb-[10px] leading-tight owner__name">
@@ -37,14 +37,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {}
       <div className="bg-white">
         <section className="layout__container xl:px-[60px] lg:px-[40px] 2xs:px-[20px] py-20 md:py-14 2xs:py-10">
           <h2 className="text-[45px] md:text-[32px] 2xs:text-[20px] text-black">
             Features on The Moveee Magazine
           </h2>
           <div className="flex gap-x-[40px] gap-y-[40px] flex-wrap mt-8">
-            {/* Feature 1 */}
+            {}
             <div className="w-[22.5%] lg:w-[30%] md:w-[46%] 2xs:w-full flex flex-col items-center">
               <div
                 className="feature-image"
@@ -69,7 +69,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Feature 2 */}
+            {}
             <div className="w-[22.5%] lg:w-[30%] md:w-[46%] 2xs:w-full flex flex-col items-center">
               <div
                 className="feature-image"
@@ -95,7 +95,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Feature 3 */}
+            {}
             <div className="w-[22.5%] lg:w-[30%] md:w-[46%] 2xs:w-full flex flex-col items-center">
               <div
                 className="feature-image"
@@ -121,7 +121,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Feature 4 */}
+            {}
             <div className="w-[22.5%] lg:w-[30%] md:w-[46%] 2xs:w-full flex flex-col items-center">
               <div
                 className="feature-image"
@@ -149,7 +149,7 @@ const Home = () => {
         </section>
       </div>
 
-      {/* Footer Section */}
+      {}
       <Footer />
     </>
   );

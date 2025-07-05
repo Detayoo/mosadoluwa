@@ -33,9 +33,6 @@ const articleParagraphs = [
   `I have nothing against fantasy but when you assess these fundamental issues, you're more equipped. You're armed with an acute knowledge of where you are and because of that, you're informed about what it will take you to make your world of fantasy a reality.`,
   `So, that's it my friends. Own every decision, and "to thyself, be true".`,
   `I pray that the light will always guide you. Till some other time, blessings.`,
-  //   `Postscript:`,
-  //   `- "Ada" - first female child in Igbo land`,
-  //   `- If you're wondering what the 1st rule behind my bible was, it reads "Seek God". Image attached below.`,
 ];
 
 const postscriptBullets = [
@@ -91,7 +88,7 @@ export default function InfluencesBlog() {
         <title>On Knowing the Influences that Shape Your Life — Blog</title>
       </Head>
       <main className="bg-white text-black font-sans relative overflow-x-hidden">
-        {/* cursor */}
+        {}
         <div
           ref={ringRef}
           className="pointer-events-none fixed top-0 left-0 w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00000033] z-[90]"
@@ -103,7 +100,7 @@ export default function InfluencesBlog() {
           style={{ mixBlendMode: "difference" }}
         />
 
-        {/* header */}
+        {}
         <div className="px-4 lg:px-12 mx-auto max-w-[1440px] py-6 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs">
             <span className="flex items-center justify-center text-[20px]">
@@ -112,7 +109,7 @@ export default function InfluencesBlog() {
           </div>
         </div>
 
-        {/* hero */}
+        {}
         <section className="px-4 lg:px-12 mx-auto max-w-[1440px] pt-4 grid lg:grid-cols-12 gap-8 min-h-[40vh] lg:min-h-[60vh] items-start">
           <h1
             className="col-span-12 lg:col-span-7 font-semibold leading-none text-[10vw] lg:text-[8vw]"
@@ -137,7 +134,7 @@ export default function InfluencesBlog() {
           </div>
         </section>
 
-        {/* article */}
+        {}
         <article
           id="article"
           className="px-4 lg:px-12 max-w-3xl mx-auto space-y-8 py-4 lg:py-16"
@@ -153,7 +150,7 @@ export default function InfluencesBlog() {
             ))}
           </section>
 
-          {/* Postscript */}
+          {}
           <section
             className="pt-10 border-t border-gray-300 space-y-4"
             id="postscript"

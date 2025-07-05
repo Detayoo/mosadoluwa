@@ -93,14 +93,14 @@ export default function IntoMindBlog() {
           style={{ mixBlendMode: "difference" }}
         />
 
-        {/* Header */}
+        {}
         <div className="px-4 lg:px-12 mx-auto max-w-[1440px] py-6 flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs">
             <span className="text-[20px]">Blog</span>
           </div>
         </div>
 
-        {/* Hero */}
+        {}
         <section className="px-4 lg:px-12 mx-auto max-w-[1440px] pt-4 grid lg:grid-cols-12 gap-8 min-h-[40vh] lg:min-h-[60vh] items-start">
           <h1
             className="col-span-12 lg:col-span-7 font-semibold leading-none text-[8vw] lg:text-[6vw]"
@@ -123,7 +123,7 @@ export default function IntoMindBlog() {
           </div>
         </section>
 
-        {/* Article */}
+        {}
         <article
           id="article"
           className="px-4 lg:px-12 max-w-3xl mx-auto space-y-8 py-4 lg:py-16"

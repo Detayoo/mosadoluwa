@@ -20,7 +20,7 @@ const Custom404 = () => {
         <title>404 – Page not found</title>
       </Head>
       <main className="min-h-screen bg-[#d4d5cd] text-[#0f0f0f] flex flex-col">
-        {/* Header */}
+        {}
         <header className="flex justify-between items-start px-8 pt-6 text-xs uppercase tracking-wider">
           <span>Error 404</span>
           <Link href="/" className="hover:underline">
@@ -28,7 +28,7 @@ const Custom404 = () => {
           </Link>
         </header>
 
-        {/* Body */}
+        {}
         <section className="flex-1 flex flex-col justify-center items-center px-8">
           <div className="relative w-full max-w-5xl">
             <svg
@@ -38,16 +38,16 @@ const Custom404 = () => {
               fill="none"
               strokeWidth={8}
             >
-              {/* Left 4 */}
+              {}
               <path className="digit" d="M250 80 L140 190 L250 190 Z" />
               <circle className="digit" cx="500" cy="150" r="120" />
-              {/* Right 4 */}
+              {}
               <path className="digit" d="M760 190 L870 80 L870 190 Z" />
             </svg>  
           </div>
         </section>
 
-        {/* Footer info about digits */}
+        {}
         <section className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#c2c3bb] text-xs px-8 pb-12">
           <div className="py-6 md:pr-6">
             <h3 className="font-semibold mb-2">The Zero</h3>

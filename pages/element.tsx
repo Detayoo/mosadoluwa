@@ -20,7 +20,6 @@ export default function ElementPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Pin hero section
       if (heroRef.current) {
         ScrollTrigger.create({
           trigger: heroRef.current,
@@ -32,7 +31,6 @@ export default function ElementPage() {
         });
       }
 
-      // Stripe opposing translations
       stripeRefs.current.forEach((el, i) => {
         gsap.to(el, {
           xPercent: i % 2 === 0 ? -60 : 60,
@@ -46,7 +44,6 @@ export default function ElementPage() {
         });
       });
 
-      // Heading scale & letterspacing
       if (headingRef.current) {
         gsap.to(headingRef.current, {
           scale: 1.3,
@@ -74,12 +71,12 @@ export default function ElementPage() {
         />
       </Head>
       <main className="bg-black text-white min-h-screen font-sans overflow-x-hidden">
-        {/* HERO */}
+        {}
         <section
           ref={heroRef}
           className="relative flex items-center justify-center min-h-screen px-6 md:px-16"
         >
-          {/* Decorative stripes */}
+          {}
           {stripes.map((s, idx) => (
             <div
               key={idx}
@@ -94,7 +91,7 @@ export default function ElementPage() {
             />
           ))}
 
-          {/* Heading */}
+          {}
           <h1
             ref={headingRef}
             className="relative z-10 text-[14vw] leading-none font-bold uppercase tracking-tight"
@@ -104,7 +101,7 @@ export default function ElementPage() {
             <span className="block">Web&nbsp;Developer</span>
           </h1>
 
-          {/* Nav */}
+          {}
           <div className="absolute top-6 left-6 z-20 flex items-center gap-4 text-xs tracking-widest uppercase">
             <span>Thomas Bantial</span>
             <span className="opacity-60">Designer/Canada</span>
@@ -114,7 +111,7 @@ export default function ElementPage() {
           </button>
         </section>
 
-        {/* Scroll filler content */}
+        {}
         <section className="min-h-screen px-6 md:px-16 py-24 space-y-10 max-w-4xl mx-auto text-lg">
           {Array.from({ length: 8 }).map((_, i) => (
             <p key={i}>

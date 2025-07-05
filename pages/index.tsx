@@ -12,7 +12,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollSmoother);
 }
 
-// Data (sample projects pulled from earlier ventures array)
 const projects = [
   {
     title: "DeSci NG",
@@ -56,7 +55,6 @@ const projects = [
   },
 ];
 
-// Publication data (first three items from media list)
 const publications = [
   {
     title: "A Case for Decentralized Science",
@@ -76,7 +74,6 @@ const publications = [
   },
 ];
 
-// NEW: Moveee magazine features
 const features = [
   {
     title: "Why the Best Mentors Today Don't Call Themselves Mentors",
@@ -105,7 +102,6 @@ const features = [
 
 const MosaPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  // Loader state & refs
   const [showLoader, setShowLoader] = useState(true);
   const loaderRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLSpanElement>(null);
@@ -113,12 +109,9 @@ const MosaPage = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  // NEW: ref for features list
   const featuresRef = useRef<HTMLUListElement>(null);
-  // NEW: ref for large features word letters
   const featuresTitleRef = useRef<HTMLHeadingElement>(null);
 
-  // Intro animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".hero-line", {
@@ -128,7 +121,6 @@ const MosaPage = () => {
         stagger: 0.12,
       });
 
-      // List stagger reveal
       gsap.from(listRef.current?.children || [], {
         autoAlpha: 0,
         y: 40,
@@ -145,7 +137,6 @@ const MosaPage = () => {
     return () => ctx.revert();
   }, []);
 
-  // NEW: Features reveal animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!featuresRef.current) return;
@@ -167,7 +158,6 @@ const MosaPage = () => {
     return () => ctx.revert();
   }, []);
 
-  // NEW: Features hero word animation
   useEffect(() => {
     if (!featuresTitleRef.current) return;
     const letters =
@@ -184,22 +174,18 @@ const MosaPage = () => {
     });
   }, []);
 
-  // Loader effect
   useEffect(() => {
     const loader = loaderRef.current;
     const progressText = progressRef.current;
     if (!loader || !progressText || !barRef.current) return;
 
-    // Hide native scroll during load
     document.documentElement.style.overflow = "hidden";
 
     const counter = { val: 0 };
     const stripes = loader.querySelectorAll<HTMLSpanElement>(".loader-stripe");
 
-    // Set initial states
     gsap.set(stripes, { yPercent: 100, opacity: 0.85 });
 
-    // Animate stripes in
     gsap.to(stripes, {
       yPercent: 0,
       stagger: 0.1,
@@ -207,7 +193,6 @@ const MosaPage = () => {
       ease: "expo.out",
     });
 
-    // Progress text animation
     gsap.to(counter, {
       val: 100,
       duration: 5,
@@ -235,14 +220,12 @@ const MosaPage = () => {
       },
     });
 
-    // Progress bar fill
     gsap.to(barRef.current, {
       scaleX: 1,
       duration: 5,
       ease: "none",
     });
 
-    // subtle bounce effect for progress text
     gsap.to(progressText, {
       scale: 1.1,
       yoyo: true,
@@ -260,7 +243,6 @@ const MosaPage = () => {
     });
   }, []);
 
-  // Custom cursor follow
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (!cursorRef.current) return;
@@ -270,7 +252,6 @@ const MosaPage = () => {
     return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
 
-  // Smooth scrolling
   useEffect(() => {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -279,16 +260,11 @@ const MosaPage = () => {
       effects: true,
     });
 
-    // Force ScrollTrigger to recalculate start/end positions after
-    // ScrollSmoother sets up its scrollerProxy. This prevents reveal
-    // animations (e.g. the features list) from failing when navigating
-    // back to this page from another route.
     ScrollTrigger.refresh();
 
     return () => {
       if (smoother) smoother.kill();
 
-      // Remove residual inline styles to avoid layout issues after navigation
       const wrapperEl = document.getElementById("smooth-wrapper");
       const contentEl = document.getElementById("smooth-content");
       wrapperEl?.removeAttribute("style");
@@ -301,16 +277,16 @@ const MosaPage = () => {
   return (
     <>
       <Head>
-        <title>Mosa Fasasi — Portfolio</title>
+        <title>Mosadoluwa Fasasi — Portfolio</title>
       </Head>
 
-      {/* LOADER OVERLAY */}
+      {}
       {showLoader && (
         <div
           ref={loaderRef}
           className="fixed inset-0 z-[90] flex flex-col items-center justify-center bg-white text-black select-none overflow-hidden"
         >
-          {/* animated vertical stripes */}
+          {}
           <div className="absolute inset-0 flex">
             {Array.from({ length: 6 }).map((_, i) => (
               <span
@@ -325,7 +301,7 @@ const MosaPage = () => {
           >
             0%
           </span>
-          {/* progress bar */}
+          {}
           <div className="w-3/4 h-2 bg-gray-200 mt-8 overflow-hidden rounded-full">
             <div
               ref={barRef}
@@ -335,24 +311,17 @@ const MosaPage = () => {
         </div>
       )}
 
-      {/* custom cursor */}
+      {}
       <div ref={cursorRef} className="cursor-dot" />
 
       <div id="smooth-wrapper">
         <main id="smooth-content" className="text-black bg-white font-sans">
-          {/* HERO */}
+          {}
           <section
             ref={heroRef}
-            // style={{
-            //   backgroundImage: "url('/images/hero.webp')",
-            //   backgroundSize: "contain",
-            //   backgroundPosition: "right",
-            //   backgroundRepeat: "no-repeat",
-            //   marginRight: "-200px",
-            // }}
             className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden"
           >
-            {/* quick link to media page */}
+            {}
             <Link
               href="/media"
               className="absolute top-6 right-6 text-black group flex flex-col items-end"
@@ -362,7 +331,7 @@ const MosaPage = () => {
                 style={{ fontFamily: "bagoss" }}
               >
                 media
-                {/* arrow */}
+                {}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -380,7 +349,7 @@ const MosaPage = () => {
               </span>
               <span className="block w-full h-0.5 bg-black mt-1 transition-opacity group-hover:opacity-60" />
             </Link>
-            {/* Vertical grid overlay */}
+            {}
             <div className="absolute inset-0 pointer-events-none grid grid-cols-12">
               {Array.from({ length: 12 }).map((_, i) => (
                 <div key={i} className="border-r border-gray-200/60"></div>
@@ -403,7 +372,7 @@ const MosaPage = () => {
             </p>
           </section>
 
-          {/* SELECTED PROJECTS */}
+          {}
           <section className="px-6 md:px-24 mx-auto max-w-[1440px] py-20 md:py-32">
             <h2 className="text-3xl md:text-4xl font-semibold mb-16">
               ✺ adventures
@@ -429,7 +398,7 @@ const MosaPage = () => {
                         {isOpen ? "-" : "+"} {p.year}
                       </span>
                     </button>
-                    {/* details accordion */}
+                    {}
                     <div
                       className="grid overflow-hidden transition-all duration-500 text-sm md:text-base mt-4 px-1 md:px-4"
                       style={{
@@ -454,7 +423,7 @@ const MosaPage = () => {
             </div>
           </section>
 
-          {/* REFLECTIVE QUOTE */}
+          {}
           <section className="px-6 md:px-24 mx-auto max-w-[1440px] py-16 md:py-24 bg-gray-50 text-black">
             <figure className="text-center mx-auto max-w-3xl px-4">
               <blockquote className="italic font-semibold text-xl md:text-2xl leading-snug text-gray-700">
@@ -470,7 +439,7 @@ const MosaPage = () => {
             </figure>
           </section>
 
-          {/* ABOUT ME */}
+          {}
           <section className="px-6 md:px-24 mx-auto max-w-[1440px] py-24 md:py-32 grid md:grid-cols-12 gap-14">
             <h2 className="md:col-span-4 text-3xl md:text-4xl font-semibold">
               ✺ about&nbsp;me
@@ -490,7 +459,7 @@ const MosaPage = () => {
             </div>
           </section>
 
-          {/* PUBLICATIONS */}
+          {}
           <section className="px-6 md:px-24 mx-auto max-w-[1440px] py-24 md:py-32 bg-gray-50 text-black">
             <h2 className="text-3xl md:text-4xl font-semibold mb-16">
               ✺ publications
@@ -526,9 +495,9 @@ const MosaPage = () => {
             </div>
           </section>
 
-          {/* NEW: FEATURES */}
+          {}
           <section className="relative overflow-hidden bg-[#000] text-white py-28 md:py-40">
-            {/* gigantic word in background */}
+            {}
             <h2
               ref={featuresTitleRef}
               className="pointer-events-none absolute inset-0 flex items-center justify-center font-semibold leading-none select-none opacity-10"
@@ -544,7 +513,7 @@ const MosaPage = () => {
               ))}
             </h2>
 
-            {/* content overlay */}
+            {}
             <div className="relative z-10 px-6 md:px-24 max-w-6xl mx-auto">
               <p className="text-sm md:text-base tracking-widest mb-10 uppercase text-gray-400">
                 Features on Moveee Magazine
@@ -567,7 +536,7 @@ const MosaPage = () => {
                       <span className="ml-3 transition-transform duration-500 group-hover:translate-x-1">
                         ↗
                       </span>
-                      {/* underline */}
+                      {}
                       <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-white transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
                     </a>
                     <span className="shrink-0 text-base md:text-lg text-gray-400 group-hover:text-white transition-colors duration-300">
@@ -579,7 +548,7 @@ const MosaPage = () => {
             </div>
           </section>
 
-          {/* CONTACT CTA */}
+          {}
           <section className="bg-white border-t border-gray-300/70 py-24 md:py-32 px-6 md:px-24 mx-auto max-w-[1440px] text-center">
             <h2 className="text-3xl sm:text-4xl md:text-6xl leading-tight">
               let's create
@@ -593,7 +562,7 @@ const MosaPage = () => {
               mosadoluwafasasi@gmail.com
             </a>
 
-            {/* social links */}
+            {}
             <div className="flex justify-center gap-6 text-sm tracking-wide mt-10">
               {[
                 { label: "github", href: "https://github.com/Mosamorphing" },

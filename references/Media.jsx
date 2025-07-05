@@ -21,7 +21,6 @@ const Media = () => {
     setActiveFilter(filter);
   };
 
-  // Features data
   const features = [
     {
       title: "A Case for Decentralized Science",
@@ -124,9 +123,9 @@ const Media = () => {
   return (
     <div className="min-h-[93.5dvh] flex-1 flex flex-col justify-between">
       <div className="media-wrapper layout__container">
-        {/* Media Section */}
+        {}
         <div className="media-section pt-8">
-          {/* Filter Bar */}
+          {}
           <div className="filter-bar overflow-x-auto px-4">
             {tabs?.map((filter) => (
               <button
@@ -141,7 +140,7 @@ const Media = () => {
             ))}
           </div>
 
-          {/* Features Section */}
+          {}
           <section className="media-features-section mt-8">
             <div className="media-features-grid">
               {filteredFeatures.map((feature, index) => (
@@ -180,7 +179,7 @@ const Media = () => {
           </section>
         </div>
 
-        {/* Footer Section */}
+        {}
       </div>
       <Footer />
     </div>

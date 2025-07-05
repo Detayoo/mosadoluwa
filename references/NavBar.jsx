@@ -18,12 +18,12 @@ const Navbar = () => {
   return (
     <div className="bg-[#151414] sticky top-0 right-0 z-[999999999]">
       <nav className="navbar layout__container py-[30px]">
-        {/* Logo */}
+        {}
         <a href="/">
           <img src={logo} alt="logo" className="logo" />
         </a>
 
-        {/* Menu */}
+        {}
         <div className="">
           <div className={`menu ${isOpen ? "open" : ""}`}>
             <ul className="menu-list">
@@ -61,12 +61,12 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Send a Mail Button */}
+        {}
         <button className="desktopMenuBtn">
           <a href="mailto:someone@example.com">Send a Mail</a>
         </button>
 
-        {/* Hamburger Icon */}
+        {}
         <div className="hamburger" onClick={toggleMenu}>
           <img src={hamburgerIcon} alt="menu" className="hamburger-icon" />
         </div>

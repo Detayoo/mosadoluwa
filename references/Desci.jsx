@@ -71,7 +71,7 @@ const Desci = () => {
         </p>
       </div>
 
-      {/* References Section */}
+      {}
       <div className="references">
         <h3>References:</h3>
         <ol>
