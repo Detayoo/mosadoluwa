@@ -247,7 +247,7 @@ export default function MediaPage() {
 
         {}
         <Link
-          href="/"
+          href="/" 
           className="absolute top-6 left-6 text-white group flex flex-col items-start"
         >
           <span
